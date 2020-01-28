@@ -1,6 +1,3 @@
-// ECS629/759 Assignment 2 - ID3 Skeleton Code
-// Author: Simon Dixon
-
 import java.io.File;
 import java.io.FileReader;
 import java.io.BufferedReader;
@@ -11,12 +8,9 @@ import java.util.Arrays;
 import java.util.ArrayList;
 
 class ID3 {
-
 	class TreeNode {
-
 		TreeNode[] children;
 		int value;
-
 		public TreeNode(TreeNode[] ch, int val) {
 			value = val;
 			children = ch;
@@ -75,14 +69,13 @@ class ID3 {
 		return x == 0? 0: x * Math.log(x) / LOG2;
 	} // xlogx()
 
-        //AUTHOR: Alex Drossos
 	/** Execute the decision tree on the given examples in testData, and print
 	 *  the resulting class names, one to a line, for each example in testData.
 	 **/
 	public void classify(String[][] testData) {
 		if (decisionTree == null)
 			error("Please run training phase before classification");
-		// PUT  YOUR CODE HERE FOR CLASSIFICATION
+		// CLASSIFICATION
                 int length = testData.length;
                 //increment through all the data given as an input
 		for(int dataInc = 1; dataInc < length; dataInc++){
@@ -116,10 +109,8 @@ class ID3 {
 		}
 		return 0;
 	}
-
 	public void train(String[][] trainingData) {
 		indexStrings(trainingData);
-		// PUT  YOUR CODE HERE FOR TRAINING
                 //create empty used array
 		ArrayList<Integer> allCols = new ArrayList<Integer>();
                 ArrayList<Integer> allRows = new ArrayList<Integer>();
